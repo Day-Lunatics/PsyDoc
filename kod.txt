@@ -1,0 +1,13 @@
+@bot.command()
+async def add_question(c: string, q: string, a: string, b: string, c: string, d: string):
+
+if c == "1":
+    with open("categoria1.json", "w+") as file:
+        json.dump(file, x)
+    await ctx.send("I added question " + q + " with answers 1 : " + a + " \n2: " + b + " \n3: " + c + " \n4: " + d)
+elif c == "2":
+    with open("categoria2.json", "w+") as file:
+        json.dump(file, x)
+    await ctx.send("I added question " + q + " with answers 1 : " + a + " \n2: " + b + " \n3: " + c + " \n4: " + d)
+else:
+    await ctx.send("Wrong category")

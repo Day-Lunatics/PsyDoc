@@ -1,0 +1,78 @@
+[
+  {
+    "q": "Do you sometimes drink more than you planned to drink?",
+    "a": "If I drink at all, I'll have only one or two before dinner.",
+    "b": "I will occasionally skip or delay meals to have a couple more drinks.",
+    "c": "Sometimes a 'few with friends' turns into an entire evening.",
+    "d": "I have been on benders that lasted for days."
+  },
+  {
+    "q": "Have you ever tried to quit drinking and were unsuccessful?",
+    "a": "I don't want to quit, I enjoy an occasional drink.",
+    "b": "I've thought about quitting, but I just haven't gotten around to it.",
+    "c": "I have tried to control my drinking, but it hasn't worked for very long.",
+    "d": "I have tried to quit drinking many times."
+  },
+  {
+    "q": "How much time do you spend each week drinking?",
+    "a": "I only drink on special occasions or only have one before dinner.",
+    "b": "I only drink on weekends, but I drink almost every weekend.",
+    "c": "I drink at least three nights a week.",
+    "d": "I drink almost daily, as soon as I get off work."
+  },
+  {
+    "q": "Do you ever get an urge to drink or a craving for alcohol?",
+    "a": "No, I can take it or leave it.",
+    "b": "Sometimes if I have gone a few days without a drink, I'll get a desire to drink.",
+    "c": "If I skip a day drinking, I'll have an urge to drink the next day.",
+    "d": "I can't wait until happy hour every day."
+  },
+  {
+    "q": "Do you often miss work or school or obligations at home due to drinking?",
+    "a": "I don't ever remember missing work because of drinking.",
+    "b": "I have gone in late before because I was hungover.",
+    "c": "Sometimes I call in sick when I'm really recovering from a night out.",
+    "d": "I have lost jobs due to not showing up for work."
+  },
+  {
+    "q": "Has your drinking negatively affected your social or family relationships?",
+    "a": "No, I rarely drink enough to become intoxicated.",
+    "b": "Sometimes I have embarrassed myself while drinking.",
+    "c": "I prefer to hang out with people who drink as much as I do.",
+    "d": "I have lost friends or relationships due to my drinking."
+  },
+  {
+    "q": "Have you given up hobbies or activities you used to enjoy?",
+    "a": "Alcohol doesn't interfere with my life.",
+    "b": "I have skipped a few trips to the gym to drink with friends.",    
+    "c": "I rarely go to events where alcohol is not served.",
+    "d": "Drinking is my hobby."
+  },
+  {
+    "q": "Does your drinking ever put you in dangerous situations?",
+    "a": "When I drink, it is only at home.",
+    "b": "I have had a couple of drinks at lunch before and returned to work.",
+    "c": "I have driven after drinking before, but I was not really drunk.",
+    "d": "I regularly drive home from the bar."
+  },
+  {
+    "q": "Has drinking caused you any persistent health problems?",
+    "a": "I don't drink often enough for it to affect my health.",
+    "b": "On days I drink, I don't sleep through the night.",
+    "c": "I find that I don't get over morning-afters like I used to.",
+    "d": "My doctor has told me I need to quit or cut down drinking."
+  },
+  {
+    "q": "Does alcohol still give you the same feeling?",
+    "a": "One drink still helps me relax.",
+    "b": "Three beers used to do it, but now it takes a six pack.",
+    "c": "I changed to liquor because wine wasn't giving me a buzz.",
+    "d": "I rarely feel intoxicated any more no matter how much I drink."
+  },{
+    "q": "When you go without alcohol, do you get withdrawal symptoms?",
+    "a": "I don't feel any negative effects from drinking.",
+    "b": "Sometimes I get a bit anxious, but a drink immediately calms me down.",
+    "c": "When I go a day without drinking, it is hard to get to sleep.",
+    "d": "If I don't get a drink by 5 P.M. I get the shakes."
+  }  
+]

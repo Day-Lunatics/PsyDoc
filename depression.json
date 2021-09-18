@@ -1,0 +1,102 @@
+[    
+  {
+    "q": "Little interest or pleasure in doing things",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "Feeling down, depressed, or hopeless",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "Trouble falling or staying asleep, or sleeping too much",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "Feeling tired or having little energy",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "Poor appetite or overeating",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "Trouble concentrating on things, such as reading the newspaper or watching television",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },{
+    "q": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "Thoughts that you would be better off dead, or of hurting yourself",
+    "a": "Not at all",
+    "b": "Several days",
+    "c": "More than half the days",
+    "d": "Nearly every day"
+  },
+  {
+    "q": "If you checked off any problems, how difficult have these problems made it for you at work, home, or with other people?",
+    "a": "Not difficult at all",
+    "b": "Somewhat difficult",
+    "c": "Very difficult",
+    "d": "Extremely difficult"
+  }
+]
+
+@bot.command()
+async def poll(ctx):
+    message = await ctx.send(f" Question 1: \n1= Answer 1\n2= Answer 2\n3= Answer 3\n4= Answer 4\n")
+    await message.add_reaction('1 )
+    await message.add_reaction('2 )
+    await message.add_reaction('3 )
+    await message.add_reaction('4 )
+
+@bot.command()
+async def cat_info(ctx):
+    await ctx.send("Categories of tests number values")
+    await ctx.send("1. xxx")
+    await ctx.send("2. xxx")
+    await ctx.send("3. xxx")
+
+
+
+@bot.command()
+async def add_question(c: string, q: string, a: string, b: string, c: string, d: string):
+
+if c == "1":
+    with open("categoria1.json", "w+") as file:
+        json.dump(file, x)
+    await ctx.send("I added question " + q + " with answers 1 : " + a + " \n2: " + b + " \n3: " + c + " \n4: " + d)
+elif c == "2":
+    with open("categoria2.json", "w+") as file:
+        json.dump(file, x)
+    await ctx.send("I added question " + q + " with answers 1 : " + a + " \n2: " + b + " \n3: " + c + " \n4: " + d)
+else:
+    await ctx.send("Wrong category")
