@@ -4,85 +4,20 @@ import discord
 from discord.ext import commands
 import random
 
-bot = commands.Bot(command_prefix='$', description="This is a Helper Bot")
-# question_bank = ['Question1', 'Question2', 'Question3', 'Question4', 'Question5', 'Question6',
-#                  'Question7', 'Question8', 'Question9', 'Question10']
-question_bank = ['1', '2', '3', '4', '5', '6',
-                 '7', '8', '9', '10']
-
-word_list = []
-with open("word_list.txt") as file_in:
-    for line in file_in:
-        word_list.append(line)
+bot = commands.Bot(command_prefix='$', description="This is a PsyBot")
+question_bank = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
-
-# @bot.command()
-# async def pm(ctx):
-#     await ctx.message.author.send('test message')
-
-
-@bot.command()
-async def tests(ctx):
-    embed = discord.Embed(colour=discord.Color.green())
-    embed.set_author(name='Tests:')
-    embed.add_field(name='depression', value='lorem ipsum dolor sin ament', inline=False)
-    embed.add_field(name='alcoholism', value='lorem ipsum dolor sin ament', inline=False)
-    embed.add_field(name='drug', value='lorem ipsum dolor sin ament', inline=False)
-    await ctx.send(embed=embed)
-
-
-@bot.command()
-async def depression(ctx):
-    await ctx.message.author.send('test message depression')
-
-
-@bot.command()
-async def alcoholism(ctx):
-    await ctx.message.author.send('test message alcoholism')
-
-
-@bot.command()
-async def drug(ctx):
-    await ctx.message.author.send('test message drug')
-    # embed = discord.Embed(title="New Poll!", description='message', color=0xff0000)
-    # reaction = "👍"
-    # await ctx.message.add_reaction(emoji=reaction)
-
-
-@bot.command()
-async def poll(ctx):
-    random_List_No_Rep = random.sample(question_bank, 5)
-    with open('gambling.json') as json_file:
-        data = json.load(json_file)
-        for idx, val in enumerate(random_List_No_Rep):
-            for p in data[random_List_No_Rep[idx]]:    #random.choice(question_bank)
-                message = await ctx.send(f"" + p['q'] + "\n"
-                                         f"1️= " + p['a'] + "\n"
-                                         f"2️= " + p['b'] + "\n"
-                                         f"3️= " + p['c'] + "\n"
-                                         f"4️= " + p['d'] + "\n")
-                await message.add_reaction('1️⃣')
-                await message.add_reaction('2️⃣')
-                await message.add_reaction('3️⃣')
-                await message.add_reaction('4️⃣')
-
-
-@bot.command()
-async def pool2(ctx):
+async def PsyBot(ctx):
     await ctx.message.author.send("You want to take a quick survey?")
     message = await bot.wait_for('message', timeout=20, check=lambda m:m.author == ctx.author)
     if message.content == "yes":
-        #await ctx.send("Good, so pick a category you interest in")
         user_answer = []
-        await ctx.message.author.send(f"Good, so pick a category you interest in\n"
-                       f"1️= Gambling\n"
-                       f"2️= Alcohol\n"
-                       f"3️= Depression\n")
+        await ctx.message.author.send(f"Choose with form you would like to take\n Type the appropriate number \n"
+                                      f"1️= Gambling addiction\n"
+                                      f"2️= Alcoholism\n"
+                                      f"3️= Depression\n")
         message = await bot.wait_for('message', timeout=20, check=lambda m:m.author == ctx.author)
         if message.content == "1":
             random_List_No_Rep = random.sample(question_bank, 5)
@@ -90,11 +25,11 @@ async def pool2(ctx):
                 data = json.load(json_file)
                 for idx, val in enumerate(random_List_No_Rep):
                     for p in data[random_List_No_Rep[idx]]:  # random.choice(question_bank)
-                        message = await ctx.message.author.send(f"" + p['q'] + "\n"
-                                                 f"1️= " + p['a'] + "\n"
-                                                 f"2️= " + p['b'] + "\n"
-                                                 f"3️= " + p['c'] + "\n"
-                                                 f"4️= " + p['d'] + "\n")
+                        message = await ctx.message.author.send(f"" + p['q'] + "\n Type the appropriate number \n"
+                                                                f"1️= " + p['a'] + "\n"
+                                                                f"2️= " + p['b'] + "\n"
+                                                                f"3️= " + p['c'] + "\n"
+                                                                f"4️= " + p['d'] + "\n")
 
                         message = await bot.wait_for('message', timeout=20, check=lambda m:m.author == ctx.author)
                         user_answer.append(int(message.content))
@@ -104,25 +39,25 @@ async def pool2(ctx):
             await ctx.message.author.send(total_points)
 
             if total_points >= 18:
-                await ctx.message.author.send(f">=18 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should contact professional help")
             elif 15 <= total_points < 18:
-                await ctx.message.author.send(f">=15 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should highly consider contacting professional help")
             elif 10 <= total_points < 15:
-                await ctx.message.author.send(f">=10 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should consider contacting someone and talk about your problems")
             elif total_points < 10:
-                await ctx.message.author.send(f"<10 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You don't need to contact anyone at the moment but remember to take good care of yourself")
 
         if message.content == "2":
             random_List_No_Rep = random.sample(question_bank, 5)
             with open('alcohol.json') as json_file:
                 data = json.load(json_file)
                 for idx, val in enumerate(random_List_No_Rep):
-                    for p in data[random_List_No_Rep[idx]]:  # random.choice(question_bank)
-                        message = await ctx.message.author.send(f"" + p['q'] + "\n"
-                                                 f"1️= " + p['a'] + "\n"
-                                                 f"2️= " + p['b'] + "\n"
-                                                 f"3️= " + p['c'] + "\n"
-                                                 f"4️= " + p['d'] + "\n")
+                    for p in data[random_List_No_Rep[idx]]:
+                        message = await ctx.message.author.send(f"" + p['q'] + "\n Type the appropriate number \n"
+                                                                f"1️= " + p['a'] + "\n"
+                                                                f"2️= " + p['b'] + "\n"
+                                                                f"3️= " + p['c'] + "\n"
+                                                                f"4️= " + p['d'] + "\n")
 
                         message = await bot.wait_for('message', timeout=20, check=lambda m:m.author == ctx.author)
                         user_answer.append(int(message.content))
@@ -132,25 +67,25 @@ async def pool2(ctx):
             await ctx.message.author.send(total_points)
 
             if total_points >= 18:
-                await ctx.message.author.send(f">=18 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should contact professional help")
             elif 15 <= total_points < 18:
-                await ctx.message.author.send(f">=15 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should highly consider contacting professional help")
             elif 10 <= total_points < 15:
-                await ctx.message.author.send(f">=10 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should consider contacting someone and talk about your problems")
             elif total_points < 10:
-                await ctx.message.author.send(f"<10 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You don't need to contact anyone at the moment but remember to take good care of yourself")
 
         if message.content == "3":
             random_List_No_Rep = random.sample(question_bank, 5)
             with open('depression.json') as json_file:
                 data = json.load(json_file)
                 for idx, val in enumerate(random_List_No_Rep):
-                    for p in data[random_List_No_Rep[idx]]:  # random.choice(question_bank)
-                        message = await ctx.message.author.send(f"" + p['q'] + "\n"
-                                                 f"1️= " + p['a'] + "\n"
-                                                 f"2️= " + p['b'] + "\n"
-                                                 f"3️= " + p['c'] + "\n"
-                                                 f"4️= " + p['d'] + "\n")
+                    for p in data[random_List_No_Rep[idx]]:
+                        message = await ctx.message.author.send(f"" + p['q'] + "\n Type the appropriate number \n"
+                                                                f"1️= " + p['a'] + "\n"
+                                                                f"2️= " + p['b'] + "\n"
+                                                                f"3️= " + p['c'] + "\n"
+                                                                f"4️= " + p['d'] + "\n")
 
                         message = await bot.wait_for('message', timeout=20, check=lambda m:m.author == ctx.author)
                         user_answer.append(int(message.content))
@@ -160,12 +95,11 @@ async def pool2(ctx):
             await ctx.message.author.send(total_points)
 
             if total_points >= 18:
-                await ctx.message.author.send(f">=18 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should contact professional help")
             elif 15 <= total_points < 18:
-                await ctx.message.author.send(f">=15 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should highly consider contacting professional help")
             elif 10 <= total_points < 15:
-                await ctx.message.author.send(f">=10 Dobra to dajem jaki masz problem byczq")
+                await ctx.message.author.send(f"You should consider contacting someone and talk about your problems")
             elif total_points < 10:
-                await ctx.message.author.send(f"<10 Dobra to dajem jaki masz problem byczq")
-
+                await ctx.message.author.send(f"You don't need to contact anyone at the moment but remember to take good care of yourself")
 
