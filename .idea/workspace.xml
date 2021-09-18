@@ -21,6 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f04335e3-a3c3-49b6-bd45-8e2d6f55c561" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alcohol.json" beforeDir="false" afterPath="$PROJECT_DIR$/alcohol.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/depression.json" beforeDir="false" afterPath="$PROJECT_DIR$/depression.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gambling — kopia.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gambling.json" beforeDir="false" afterPath="$PROJECT_DIR$/gambling.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
