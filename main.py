@@ -9,7 +9,7 @@ question_bank = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
 
 @bot.command()
-async def PsyBot(ctx):
+async def PsyDoc(ctx):
     await ctx.message.author.send("You want to take a quick survey?")
     message = await bot.wait_for('message', timeout=20, check=lambda m:m.author == ctx.author)
     if message.content == "yes":
